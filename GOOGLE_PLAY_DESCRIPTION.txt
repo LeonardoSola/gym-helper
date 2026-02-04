@@ -1,0 +1,61 @@
+═══════════════════════════════════════════════════════════════
+BREVE DESCRIÇÃO (Máximo 80 caracteres)
+═══════════════════════════════════════════════════════════════
+
+Cronômetro de descanso e contador de séries para seus treinos na academia
+
+═══════════════════════════════════════════════════════════════
+DESCRIÇÃO COMPLETA
+═══════════════════════════════════════════════════════════════
+
+Gym Helper - Seu Assistente de Treino na Academia
+
+Transforme seus treinos com o Gym Helper, o aplicativo essencial para quem busca máxima eficiência na academia. Gerencie seus intervalos de descanso e acompanhe suas séries de forma simples e intuitiva.
+
+🎯 PRINCIPAIS FUNCIONALIDADES
+
+⏱️ Cronômetro de Descanso Inteligente
+• Intervalos pré-definidos: 30s, 40s e 50s
+• Modo personalizado para criar seu próprio intervalo
+• Notificação por vibração quando o tempo acaba
+• Tela sempre ativa durante o uso (não desliga automaticamente)
+
+📊 Contador de Séries e Repetições
+• Acompanhe quantas séries você já completou
+• Conte suas repetições em tempo real
+• Função desfazer para corrigir contagens acidentais
+
+🔄 Modo Auto-Play
+• Ative o modo automático para reiniciar o cronômetro automaticamente após cada intervalo
+• Ideal para treinos intensos e circuitos
+
+✨ INTERFACE SIMPLES E INTUITIVA
+• Design limpo e fácil de usar
+• Visualização clara do tempo restante
+• Controles grandes e acessíveis
+• Perfeito para uso durante o treino
+
+🔒 PRIVACIDADE TOTAL
+• Funciona 100% offline - não precisa de internet
+• Não coleta dados pessoais
+• Não armazena informações
+• Totalmente privado e seguro
+
+💪 IDEAL PARA:
+• Treinos de força e hipertrofia
+• Circuitos e treinos intervalados
+• Qualquer pessoa que quer otimizar seus intervalos de descanso
+• Atletas que precisam de precisão nos tempos de recuperação
+
+📱 COMPATÍVEL COM WEAR OS
+Otimizado para dispositivos Wear OS, permitindo que você use o app diretamente no seu smartwatch durante o treino.
+
+🎯 POR QUE ESCOLHER O GYM HELPER?
+
+✓ Simplicidade: Interface minimalista focada no essencial
+✓ Eficiência: Otimize seus treinos controlando seus intervalos
+✓ Confiabilidade: Funciona perfeitamente offline
+✓ Privacidade: Seus dados ficam no seu dispositivo
+✓ Sem Gastos: Sem anúncios ou compras no aplicativo
+
+Comece a otimizar seus treinos hoje mesmo! Baixe o Gym Helper e alcance seus objetivos na academia com mais precisão e eficiência.

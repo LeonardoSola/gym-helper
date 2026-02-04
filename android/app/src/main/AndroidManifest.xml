@@ -42,4 +42,16 @@
             <data android:mimeType="text/plain"/>
         </intent>
     </queries>
+
+	<uses-feature
+    android:name="android.hardware.type.watch"
+    android:required="true" />
+	<meta-data
+    android:name="com.google.android.wearable.standalone"
+    android:value="true" />
+	<meta-data
+    android:name="com.google.android.wearable"
+    android:value="true" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+	<uses-permission android:name="android.permission.VIBRATE" />
 </manifest>

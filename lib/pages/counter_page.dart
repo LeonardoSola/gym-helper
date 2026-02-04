@@ -111,6 +111,7 @@ class _CounterPageState extends State<CounterPage> {
       _series++;
       _counter = 0;
       _status = CounterStatus.ready;
+      _stopwatch.reset();
     });
   }
 

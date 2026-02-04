@@ -95,7 +95,7 @@ class CounterStatusDisplay extends StatelessWidget {
 
     return switch (status) {
       CounterStatus.resting => "${restSeconds - elapsedSeconds}",
-      CounterStatus.ready => "+${elapsedSeconds - restSeconds}",
+      CounterStatus.ready => "$elapsedSeconds",
       _ => "$elapsedSeconds",
     };
   }

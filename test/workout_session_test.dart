@@ -202,11 +202,17 @@ void main() {
 
   test('ceilToSecond rounds partial seconds up', () {
     expect(ceilToSecond(Duration.zero), Duration.zero);
-    expect(ceilToSecond(const Duration(milliseconds: 1)),
-        const Duration(seconds: 1));
-    expect(ceilToSecond(const Duration(milliseconds: 39001)),
-        const Duration(seconds: 40));
-    expect(ceilToSecond(const Duration(seconds: 40)),
-        const Duration(seconds: 40));
+    expect(
+      ceilToSecond(const Duration(milliseconds: 1)),
+      const Duration(seconds: 1),
+    );
+    expect(
+      ceilToSecond(const Duration(milliseconds: 39001)),
+      const Duration(seconds: 40),
+    );
+    expect(
+      ceilToSecond(const Duration(seconds: 40)),
+      const Duration(seconds: 40),
+    );
   });
 }

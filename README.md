@@ -1,186 +1,115 @@
-# 🏋️ Gym Helper
+# Gym Helper
 
-Um aplicativo Flutter para ajudar no treino na academia, com cronômetro de descanso inteligente e contador de séries e repetições.
+[![CI](https://github.com/LeonardoSola/gym-helper/actions/workflows/ci.yml/badge.svg)](https://github.com/LeonardoSola/gym-helper/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-## 📱 Sobre o Projeto
+A rest timer and set counter for Wear OS that you drive with one tap per set, without looking at your wrist.
 
-O **Gym Helper** é um aplicativo mobile desenvolvido em Flutter que auxilia atletas e frequentadores de academia a otimizar seus treinos através do controle preciso de intervalos de descanso e acompanhamento de séries e repetições. O app funciona 100% offline, garantindo privacidade total e funcionamento mesmo sem conexão com a internet.
+<p align="center">
+  <img src="docs/screenshots/home.png" width="180" alt="Rest time presets">
+  <img src="docs/screenshots/working.png" width="180" alt="Set in progress">
+  <img src="docs/screenshots/resting.png" width="180" alt="Rest countdown with progress ring">
+  <img src="docs/screenshots/ready.png" width="180" alt="Rest finished, ready for the next set">
+</p>
 
-## ✨ Funcionalidades
+## Features
 
-- ⏱️ **Cronômetro de Descanso Inteligente**
-  - Intervalos pré-definidos: 30s, 40s e 50s
-  - Modo personalizado para criar seu próprio intervalo (10s a 99s)
-  - Notificação por vibração quando o tempo acaba
-  - Tela sempre ativa durante o uso
+- **One-tap flow.** The whole screen is the button: tap when you finish a set to start resting, and tap again to start the next one.
+- **Rest presets.** 30, 40 and 50 seconds, or any custom value from 10 to 99 seconds.
+- **Easy to read mid-set.** Big tabular digits, a different colour for each phase and a countdown ring around the edge of the watch face.
+- **Haptic alerts.** A double buzz when rest is over and a light tick on every tap.
+- **Set and exercise counters.** Sets are counted automatically. Finishing an exercise resets the set count.
+- **Auto-restart.** Optionally start the next set the moment rest ends, which is handy for circuits.
+- **Undo.** Reverts the last tap completely, including the phase and its timer, so an accidental tap costs nothing.
+- **Screen stays on** for the whole session.
+- **Private.** Works fully offline, with no accounts, ads or analytics. See the [privacy policy](PRIVACY_POLICY.md).
 
-- 📊 **Contador de Séries e Repetições**
-  - Acompanhe quantas séries você já completou
-  - Conte suas repetições em tempo real
-  - Função desfazer para corrigir contagens acidentais
+## How it works
 
-- 🔄 **Modo Auto-Play**
-  - Reinicia o cronômetro automaticamente após cada intervalo
-  - Ideal para treinos intensos e circuitos
+| Phase | What you see | Tap the screen to |
+| --- | --- | --- |
+| **GO** | Time spent on the current set | Finish the set and start resting |
+| **REST** | Seconds left, with the ring emptying | Skip the rest and start the next set |
+| **READY** | Green screen and time since the rest ended | Start the next set |
 
-- 📱 **Otimizado para Wear OS**
-  - Use diretamente no seu smartwatch durante o treino
+The side controls are:
 
-- 🔒 **Privacidade Total**
-  - Funciona 100% offline
-  - Não coleta dados pessoais
-  - Sem anúncios
+- **EX (left):** finish the current exercise. Adds one to the exercise count and resets the sets.
+- **Repeat (top right):** turn auto-restart on or off.
+- **Undo (bottom right):** revert the last tap.
 
-## 🛠️ Tecnologias Utilizadas
+<p align="center">
+  <img src="docs/screenshots/picker.png" width="180" alt="Custom rest time picker">
+</p>
 
-- **Flutter** - Framework multiplataforma
-- **Dart** - Linguagem de programação
-- **Packages:**
-  - `intl` - Formatação de datas e números
-  - `vibration` - Notificações por vibração
-  - `wakelock_plus` - Manter tela ativa
+## Getting started
 
-## 📋 Requisitos
+Requirements: [Flutter](https://docs.flutter.dev/get-started/install) 3.35 or newer (Dart 3.8+), plus the Android SDK and either a Wear OS emulator or a Wear OS watch.
 
-- Flutter SDK >= 3.4.3
-- Dart SDK >= 3.4.3
-- Android SDK 21+ (Android 5.0+)
-- Wear OS (opcional, para uso em smartwatch)
-
-## 🚀 Instalação
-
-1. Clone o repositório:
 ```bash
 git clone https://github.com/LeonardoSola/gym-helper.git
 cd gym-helper
-```
-
-2. Instale as dependências:
-```bash
 flutter pub get
-```
 
-3. Execute o aplicativo:
-```bash
+# Start a Wear OS emulator (create one in Android Studio's Device Manager), then:
 flutter run
 ```
 
-## 📖 Tutorial de Uso
-
-### Primeira Tela — Escolha do Tempo de Descanso
-
-Na primeira tela, você escolhe o tempo de descanso entre uma série e outra.
-
-- **Opções pré-definidas:** Botões rápidos para 30s, 40s e 50s
-- **Ajuste manual:** Toque no ícone de cronômetro para configurar um tempo personalizado
-  - **Tempo mínimo:** 10 segundos
-  - **Tempo máximo:** 99 segundos
-  - A seleção do tempo funciona com um gesto de giro para cima ou para baixo, semelhante a um cadeado ou seletor rotativo
-
-Após escolher o tempo, basta tocar em **Play** para iniciar.
-
-### Tela Principal do App
-
-#### Contador Central
-
-- No centro da tela fica o **contador de séries**
-- Ao tocar em qualquer área da tela (exceto nos botões), o app:
-  - Entra em **modo descanso**
-  - Incrementa automaticamente o contador de séries
-
-#### Modo Descanso (REST)
-
-Quando entra em descanso:
-
-- O texto **REST** aparece no topo
-- Inicia uma **contagem regressiva** com o tempo configurado
-- Ao finalizar:
-  - O celular **vibra**
-  - A tela fica **verde**
-  - Basta tocar na tela para voltar ao modo exercício (**GO**)
-
-#### Modo Exercício (GO)
-
-- Indicado pelo texto **GO**
-- Representa o tempo ativo do exercício
-- O usuário controla manualmente quando iniciar o próximo descanso tocando na tela
-
-### Controles Adicionais
-
-#### 🔁 Loop (bolinha superior direita)
-
-- Quando ativado:
-  - Ao finalizar o descanso, o app **não fica verde**
-  - Apenas vibra e **retorna automaticamente ao modo exercício**
-- Ideal para treinos com ritmo contínuo
-
-#### ↩️ Voltar (bolinha inferior direita)
-
-- Retorna para o estado anterior:
-  - Se estava em exercício → volta para exercício
-  - Se estava em descanso → volta para descanso
-- Útil para corrigir toques acidentais
-
-#### 🔢 Contador de Exercícios (bolinha esquerda)
-
-- Exibe o **contador de exercícios**
-- Ao tocar:
-  - Incrementa o número de exercícios em **+1**
-  - Reseta automaticamente o contador de séries
-
-## 📁 Estrutura do Projeto
-
-```
-gym-helper/
-├── android/              # Configurações Android
-├── lib/
-│   ├── main.dart         # Ponto de entrada do app
-│   ├── pages/            # Telas do aplicativo
-│   │   ├── home_page.dart
-│   │   └── counter_page.dart
-│   ├── widgets/          # Componentes reutilizáveis
-│   │   ├── circle_button.dart
-│   │   ├── series_button.dart
-│   │   ├── top_clock.dart
-│   │   └── ...
-│   └── utils/            # Utilitários
-│       └── vibration_helper.dart
-├── pubspec.yaml          # Dependências do projeto
-└── README.md
-```
-
-## 🏗️ Build para Produção
-
-### Android
+Run the checks:
 
 ```bash
-flutter build apk --release
+flutter analyze
+flutter test
 ```
 
-### Android App Bundle (para Google Play)
+Build a release:
 
 ```bash
 flutter build appbundle --release
 ```
 
-## 📄 Licença
+Release builds are signed with the key in `android/key.properties` when that file exists ([format](https://docs.flutter.dev/deployment/android#reference-the-keystore-from-the-app)). Without it they fall back to the debug key, so a fresh clone always builds.
 
-Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
+## Tech stack
 
-## 🤝 Contribuindo
+- [Flutter](https://flutter.dev) and Dart, with Material 3
+- [`vibration`](https://pub.dev/packages/vibration) for haptic alerts
+- [`wakelock_plus`](https://pub.dev/packages/wakelock_plus) to keep the screen on during a session
+- [`intl`](https://pub.dev/packages/intl) for the clock
+- GitHub Actions running `flutter analyze` and `flutter test`
 
-Contribuições são sempre bem-vindas! Sinta-se à vontade para:
+## Project structure
 
-1. Fazer um Fork do projeto
-2. Criar uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abrir um Pull Request
+```
+lib/
+├── main.dart                   # App entry point
+├── models/
+│   └── workout_session.dart    # Timer, set and exercise logic (no UI)
+├── pages/
+│   ├── home_page.dart          # Rest time presets
+│   ├── rest_picker_page.dart   # Custom rest time (10 to 99 s)
+│   └── session_page.dart       # Training screen
+├── theme/
+│   └── app_theme.dart          # Material 3 dark theme and phase colours
+├── utils/
+│   └── haptics.dart            # Tap and rest-finished vibrations
+└── widgets/                    # Buttons, rest ring, clock, shared scaffold
+test/
+├── workout_session_test.dart   # Unit tests for the session logic (fake clock)
+├── session_page_test.dart      # Widget tests for the training screen
+└── app_test.dart               # Navigation from the home screen
+```
 
-## 📞 Contato
+The session logic lives in `WorkoutSession`, a plain `ChangeNotifier` that reads time from an injectable clock. Elapsed time comes from timestamps rather than from counting timer ticks, so the countdown never drifts and the logic can be unit tested without real timers.
 
-Para dúvidas, sugestões ou problemas, abra uma [issue](https://github.com/LeonardoSola/gym-helper/issues) no repositório.
+## Design notes
 
----
+- **Dark only, on purpose.** Wear OS is a dark platform and most watches have OLED screens, so the app uses a true-black theme. A light mode would never be seen.
+- **Built for sweaty hands.** Every control is at least 48 dp, and the main action is the entire screen.
+- **Readable at a glance.** Phases differ in colour as well as text: green for working, amber for resting and a full green screen when it is time to go.
 
-Desenvolvido com ❤️ usando Flutter
+The screenshots come from a Flutter web build rendered at 227 x 227 dp, the size of a large round watch.
+
+## License
+
+[MIT](LICENSE) © Leonardo Sola

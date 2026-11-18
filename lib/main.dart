@@ -1,30 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:gym_helper/pages/home_page.dart';
-import 'package:gym_helper/widgets/top_clock.dart';
+import 'package:gym_helper/theme/app_theme.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const GymHelperApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class GymHelperApp extends StatelessWidget {
+  const GymHelperApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Gym Helper',
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
-      home: SafeArea(
-        key: UniqueKey(),
-        child: const Stack(
-          children: [
-            HomePage(),
-            TopClock(),
-          ],
-        ),
-      ),
+      debugShowCheckedModeBanner: false,
+      theme: AppTheme.dark(),
+      home: const HomePage(),
     );
   }
 }

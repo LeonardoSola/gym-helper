@@ -27,9 +27,9 @@ class WorkoutSession extends ChangeNotifier {
     required this.restDuration,
     bool autoRestart = false,
     DateTime Function()? clock,
-  })  : assert(restDuration > Duration.zero),
-        _autoRestart = autoRestart,
-        _clock = clock ?? DateTime.now;
+  }) : assert(restDuration > Duration.zero),
+       _autoRestart = autoRestart,
+       _clock = clock ?? DateTime.now;
 
   /// Maximum number of steps kept for [undo].
   static const int maxHistory = 100;
